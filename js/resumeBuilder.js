@@ -53,9 +53,31 @@ var mywork = {
 var workStart = HTMLworkStart
 var employer = HTMLworkEmployer.replace(replace_text, mywork.employer);
 var worktitle = HTMLworkTitle.replace(replace_text, mywork.title);
+var workdate = HTMLworkDates.replace(replace_text, mywork.date);
 var worklocation = HTMLworkLocation.replace(replace_text, mywork.location);
 var workdescription = HTMLworkDescription.replace(replace_text, mywork.Description);
 $("#workExperience").append(workStart);
 $(".work-entry").append(employer + worktitle);
+$(".work-entry").append(workdate);
 $(".work-entry").append(worklocation);
 $(".work-entry").append(workdescription);
+
+var myschool = {
+  "date": "2014.8 - 2016.12",
+  "name": "Aalto",
+  "degree": "Master of Cat",
+  "location": "Espoo",
+  "major": "Rats chasing and floor rolling"
+}
+
+var schoolStart = HTMLschoolStart
+var schoolname = HTMLschoolName.replace(replace_text, myschool.name);
+var schooldegree = HTMLschoolDegree.replace(replace_text, myschool.degree);
+var schooldate = HTMLschoolDates.replace(replace_text, myschool.date);
+var schoollocation = HTMLschoolLocation.replace(replace_text, myschool.location);
+var schoolmajor = HTMLschoolMajor.replace(replace_text, myschool.major);
+$("#education").append(schoolStart);
+$(".education-entry").append(schoolname + schooldegree);
+$(".education-entry").append(schooldate);
+$(".education-entry").append(schoollocation);
+$(".education-entry").append(schoolmajor);
