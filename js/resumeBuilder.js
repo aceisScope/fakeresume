@@ -41,3 +41,21 @@ var place = HTMLlocation.replace(replace_text, bio["contacts"]["location"]);
 $("#topContacts").append(email);
 $("#topContacts").append(github);
 $("#topContacts").append(place);
+
+var mywork = {
+  "date": "2015.12 - 2017.4",
+  "employer": "Jongla",
+  "title": "Company cat",
+  "location": "Helsinki",
+  "Description": "Chase rats"
+}
+
+var workStart = HTMLworkStart
+var employer = HTMLworkEmployer.replace(replace_text, mywork.employer);
+var worktitle = HTMLworkTitle.replace(replace_text, mywork.title);
+var worklocation = HTMLworkLocation.replace(replace_text, mywork.location);
+var workdescription = HTMLworkDescription.replace(replace_text, mywork.Description);
+$("#workExperience").append(workStart);
+$(".work-entry").append(employer + worktitle);
+$(".work-entry").append(worklocation);
+$(".work-entry").append(workdescription);
