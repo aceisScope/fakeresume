@@ -10,7 +10,7 @@ var bio = {
   "skills": [
     "purr", "roll on the floor"
   ],
-  "bioPic": "images/avatar.jpeg"
+  "bioPic": "images/avatar.jpg"
 }
 
 var replace_text = "%data%";
@@ -44,7 +44,7 @@ $("#topContacts").append(place);
 
 var mywork = {
   "date": "2015.12 - 2017.4",
-  "employer": "Jongla",
+  "employer": "Meow&Meow Co.",
   "title": "Company cat",
   "location": "Helsinki",
   "Description": "Chase rats"
@@ -62,9 +62,27 @@ $(".work-entry").append(workdate);
 $(".work-entry").append(worklocation);
 $(".work-entry").append(workdescription);
 
+var myproject = {
+  "title": "Rats chasing practice training",
+  "date": "2016.5 - 2016.12",
+  "description": "Run after all the rats and catch them all!",
+  "image": "images/project.jpg"
+}
+var projectStart = HTMLprojectStart;
+var projecttitle = HTMLprojectTitle.replace(replace_text, myproject.title);
+var projectdate = HTMLprojectDates.replace(replace_text, myproject.date);
+var projectdescription = HTMLprojectDescription.replace(replace_text, myproject.description);
+var projectimage = HTMLprojectImage.replace(replace_text, myproject.image);
+$("#projects").append(projectStart);
+$(".project-entry").append(projecttitle);
+$(".project-entry").append(projectdate);
+$(".project-entry").append(projectdescription);
+$(".project-entry").append(projectimage);
+
+
 var myschool = {
   "date": "2014.8 - 2016.12",
-  "name": "Aalto",
+  "name": "Meow University",
   "degree": "Master of Cat",
   "location": "Espoo",
   "major": "Rats chasing and floor rolling"
