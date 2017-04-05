@@ -45,25 +45,40 @@ $("#topContacts").append(email);
 $("#topContacts").append(github);
 $("#topContacts").append(place);
 
-var mywork = {
-  "date": "2015.12 - 2017.4",
-  "employer": "Meow&Meow Co.",
-  "title": "Company cat",
-  "location": "Helsinki",
-  "Description": "Chase rats"
+var work = [
+  {
+    "date": "2015.12 - 2017.4",
+    "employer": "Meow&Meow Co.",
+    "title": "Company cat",
+    "location": "Helsinki",
+    "Description": "Chase rats"
+  },
+  {
+    "date": "2015.6 - 2015.12",
+    "employer": "Meow University",
+    "title": "Cat assistant",
+    "location": "Espoo",
+    "Description": "Rats catching practice"
+  }
+]
+
+for (index in work) {
+  var workStart = HTMLworkStart;
+  $("#workExperience").append(workStart);
+
+  var mywork = work[index];
+  var employer = HTMLworkEmployer.replace(replace_text, mywork.employer);
+  var worktitle = HTMLworkTitle.replace(replace_text, mywork.title);
+  var workdate = HTMLworkDates.replace(replace_text, mywork.date);
+  var worklocation = HTMLworkLocation.replace(replace_text, mywork.location);
+  var workdescription = HTMLworkDescription.replace(replace_text, mywork.Description);
+  $(".work-entry:last").append(employer + worktitle);
+  $(".work-entry:last").append(workdate);
+  $(".work-entry:last").append(worklocation);
+  $(".work-entry:last").append(workdescription);
 }
 
-var workStart = HTMLworkStart
-var employer = HTMLworkEmployer.replace(replace_text, mywork.employer);
-var worktitle = HTMLworkTitle.replace(replace_text, mywork.title);
-var workdate = HTMLworkDates.replace(replace_text, mywork.date);
-var worklocation = HTMLworkLocation.replace(replace_text, mywork.location);
-var workdescription = HTMLworkDescription.replace(replace_text, mywork.Description);
-$("#workExperience").append(workStart);
-$(".work-entry").append(employer + worktitle);
-$(".work-entry").append(workdate);
-$(".work-entry").append(worklocation);
-$(".work-entry").append(workdescription);
+
 
 var myproject = {
   "title": "Rats chasing practice training",
