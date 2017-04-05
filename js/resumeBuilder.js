@@ -26,12 +26,15 @@ $("#header").prepend(role);
 $("#header").prepend(name);
 $("#header").prepend(pic);
 
-var skillStart = HTMLskillsStart;
-$("#header").append(skillStart);
+console.log(bio.skills)
+if (bio.skills.length > 0) {
+  var skillStart = HTMLskillsStart;
+  $("#header").append(skillStart);
 
-for (let skill of bio["skills"]) {
-  var html_skill = HTMLskills.replace(replace_text, skill);
-  $("#skills").append(html_skill);
+  for (let skill of bio["skills"]) {
+    var html_skill = HTMLskills.replace(replace_text, skill);
+    $("#skills").append(html_skill);
+  }
 }
 
 var email = HTMLemail.replace(replace_text, bio["contacts"]["email"]);
