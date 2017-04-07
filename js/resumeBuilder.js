@@ -1,5 +1,5 @@
 var bio = {
-  "name": "Binghui",
+  "name": "Little Meow",
   "role": "Company cat",
   "contacts": {
     "email": "bertieliu52@gmail.com",
@@ -15,8 +15,8 @@ var bio = {
 
 var replace_text = "%data%";
 
-var name = HTMLheaderName.replace(replace_text, "Binghui");
-var role = HTMLheaderRole.replace(replace_text, "Company cat");
+var name = HTMLheaderName.replace(replace_text, bio.name);
+var role = HTMLheaderRole.replace(replace_text, bio.role);
 
 var pic = HTMLbioPic.replace(replace_text, bio["bioPic"]);
 var welcomeMsg = HTMLwelcomeMsg.replace(replace_text, bio["welcomeMsg"]);
@@ -117,3 +117,5 @@ $(".education-entry").append(schoolname + schooldegree);
 $(".education-entry").append(schooldate);
 $(".education-entry").append(schoollocation);
 $(".education-entry").append(schoolmajor);
+
+$("#main").append(internationalizeButton);

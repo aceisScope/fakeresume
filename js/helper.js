@@ -70,6 +70,11 @@ $(document).ready(function() {
   });
 });
 
+function inName(myname) {
+  var names = myname.trim().split(" ");
+  return names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase() + " " + names[1].toUpperCase();
+}
+
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
 */
