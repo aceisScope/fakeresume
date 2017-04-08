@@ -26,7 +26,6 @@ $("#header").prepend(role);
 $("#header").prepend(name);
 $("#header").prepend(pic);
 
-console.log(bio.skills)
 if (bio.skills.length > 0) {
   var skillStart = HTMLskillsStart;
   $("#header").append(skillStart);
@@ -64,22 +63,25 @@ var work = {
   ]
 }
 
-for (index in work.jobs) {
-  var workStart = HTMLworkStart;
-  $("#workExperience").append(workStart);
+work.display = function() {
+  for (index in work.jobs) {
+    var workStart = HTMLworkStart;
+    $("#workExperience").append(workStart);
 
-  var mywork = work.jobs[index];
-  var employer = HTMLworkEmployer.replace(replace_text, mywork.employer);
-  var worktitle = HTMLworkTitle.replace(replace_text, mywork.title);
-  var workdate = HTMLworkDates.replace(replace_text, mywork.date);
-  var worklocation = HTMLworkLocation.replace(replace_text, mywork.location);
-  var workdescription = HTMLworkDescription.replace(replace_text, mywork.Description);
-  $(".work-entry:last").append(employer + worktitle);
-  $(".work-entry:last").append(workdate);
-  $(".work-entry:last").append(worklocation);
-  $(".work-entry:last").append(workdescription);
+    var mywork = work.jobs[index];
+    var employer = HTMLworkEmployer.replace(replace_text, mywork.employer);
+    var worktitle = HTMLworkTitle.replace(replace_text, mywork.title);
+    var workdate = HTMLworkDates.replace(replace_text, mywork.date);
+    var worklocation = HTMLworkLocation.replace(replace_text, mywork.location);
+    var workdescription = HTMLworkDescription.replace(replace_text, mywork.Description);
+    $(".work-entry:last").append(employer + worktitle);
+    $(".work-entry:last").append(workdate);
+    $(".work-entry:last").append(worklocation);
+    $(".work-entry:last").append(workdescription);
+  }
 }
 
+work.display();
 
 var myproject = {
   "title": "Rats chasing practice training",
@@ -114,20 +116,23 @@ var education = {
   ]
 }
 
-education.schools.forEach(function(myschool) {
-  var schoolStart = HTMLschoolStart
-  var schoolname = HTMLschoolName.replace(replace_text, myschool.name);
-  var schooldegree = HTMLschoolDegree.replace(replace_text, myschool.degree);
-  var schooldate = HTMLschoolDates.replace(replace_text, myschool.date);
-  var schoollocation = HTMLschoolLocation.replace(replace_text, myschool.location);
-  var schoolmajor = HTMLschoolMajor.replace(replace_text, myschool.major);
-  $("#education").append(schoolStart);
-  $(".education-entry:last").append(schoolname + schooldegree);
-  $(".education-entry:last").append(schooldate);
-  $(".education-entry:last").append(schoollocation);
-  $(".education-entry:last").append(schoolmajor);
-});
+education.display = function() {
+  education.schools.forEach(function(myschool) {
+    var schoolStart = HTMLschoolStart
+    var schoolname = HTMLschoolName.replace(replace_text, myschool.name);
+    var schooldegree = HTMLschoolDegree.replace(replace_text, myschool.degree);
+    var schooldate = HTMLschoolDates.replace(replace_text, myschool.date);
+    var schoollocation = HTMLschoolLocation.replace(replace_text, myschool.location);
+    var schoolmajor = HTMLschoolMajor.replace(replace_text, myschool.major);
+    $("#education").append(schoolStart);
+    $(".education-entry:last").append(schoolname + schooldegree);
+    $(".education-entry:last").append(schooldate);
+    $(".education-entry:last").append(schoollocation);
+    $(".education-entry:last").append(schoolmajor);
+  });
+}
 
+education.display();
 
 $("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
