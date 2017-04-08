@@ -45,28 +45,30 @@ $("#topContacts").append(email);
 $("#topContacts").append(github);
 $("#topContacts").append(place);
 
-var work = [
-  {
-    "date": "2015.12 - 2017.4",
-    "employer": "Meow&Meow Co.",
-    "title": "Company cat",
-    "location": "Helsinki",
-    "Description": "Chase rats"
-  },
-  {
-    "date": "2015.6 - 2015.12",
-    "employer": "Meow University",
-    "title": "Cat assistant",
-    "location": "Espoo",
-    "Description": "Rats catching practice"
-  }
-]
+var work = {
+  jobs: [
+    {
+      "date": "2015.12 - 2017.4",
+      "employer": "Meow&Meow Co.",
+      "title": "Company cat",
+      "location": "Helsinki",
+      "Description": "Chase rats"
+    },
+    {
+      "date": "2015.6 - 2015.12",
+      "employer": "Meow University",
+      "title": "Cat assistant",
+      "location": "Espoo",
+      "Description": "Rats catching practice"
+    }
+  ]
+}
 
-for (index in work) {
+for (index in work.jobs) {
   var workStart = HTMLworkStart;
   $("#workExperience").append(workStart);
 
-  var mywork = work[index];
+  var mywork = work.jobs[index];
   var employer = HTMLworkEmployer.replace(replace_text, mywork.employer);
   var worktitle = HTMLworkTitle.replace(replace_text, mywork.title);
   var workdate = HTMLworkDates.replace(replace_text, mywork.date);
@@ -77,7 +79,6 @@ for (index in work) {
   $(".work-entry:last").append(worklocation);
   $(".work-entry:last").append(workdescription);
 }
-
 
 
 var myproject = {
@@ -101,13 +102,19 @@ myproject.display = function() {
 };
 myproject.display();
 
-var myschool = {
-  "date": "2014.8 - 2016.12",
-  "name": "Meow University",
-  "degree": "Master of Cat",
-  "location": "Espoo",
-  "major": "Rats chasing and floor rolling"
+var education = {
+  "schools": [
+    {
+    "date": "2014.8 - 2016.12",
+    "name": "Meow University",
+    "degree": "Master of Cat",
+    "location": "Espoo",
+    "major": "Rats chasing and floor rolling"
+    }
+  ]
 }
+
+var myschool = education.schools[0];
 
 var schoolStart = HTMLschoolStart
 var schoolname = HTMLschoolName.replace(replace_text, myschool.name);
@@ -122,3 +129,4 @@ $(".education-entry").append(schoollocation);
 $(".education-entry").append(schoolmajor);
 
 $("#main").append(internationalizeButton);
+$("#main").append(googleMap);
