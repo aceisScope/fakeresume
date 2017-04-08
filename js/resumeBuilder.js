@@ -130,4 +130,4 @@ education.schools.forEach(function(myschool) {
 
 
 $("#main").append(internationalizeButton);
-$("#main").append(googleMap);
+$("#mapDiv").append(googleMap);
