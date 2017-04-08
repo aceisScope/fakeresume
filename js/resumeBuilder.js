@@ -86,17 +86,20 @@ var myproject = {
   "description": "Run after all the rats and catch them all!",
   "image": "images/project.jpg"
 }
-var projectStart = HTMLprojectStart;
-var projecttitle = HTMLprojectTitle.replace(replace_text, myproject.title);
-var projectdate = HTMLprojectDates.replace(replace_text, myproject.date);
-var projectdescription = HTMLprojectDescription.replace(replace_text, myproject.description);
-var projectimage = HTMLprojectImage.replace(replace_text, myproject.image);
-$("#projects").append(projectStart);
-$(".project-entry").append(projecttitle);
-$(".project-entry").append(projectdate);
-$(".project-entry").append(projectdescription);
-$(".project-entry").append(projectimage);
+myproject.display = function() {
+    var projectStart = HTMLprojectStart;
+    $("#projects").append(projectStart);
 
+    var projecttitle = HTMLprojectTitle.replace(replace_text, myproject.title);
+    var projectdate = HTMLprojectDates.replace(replace_text, myproject.date);
+    var projectdescription = HTMLprojectDescription.replace(replace_text, myproject.description);
+    var projectimage = HTMLprojectImage.replace(replace_text, myproject.image);
+    $(".project-entry:last").append(projecttitle);
+    $(".project-entry:last").append(projectdate);
+    $(".project-entry:last").append(projectdescription);
+    $(".project-entry:last").append(projectimage);
+};
+myproject.display();
 
 var myschool = {
   "date": "2014.8 - 2016.12",
