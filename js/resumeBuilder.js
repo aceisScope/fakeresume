@@ -114,19 +114,20 @@ var education = {
   ]
 }
 
-var myschool = education.schools[0];
+education.schools.forEach(function(myschool) {
+  var schoolStart = HTMLschoolStart
+  var schoolname = HTMLschoolName.replace(replace_text, myschool.name);
+  var schooldegree = HTMLschoolDegree.replace(replace_text, myschool.degree);
+  var schooldate = HTMLschoolDates.replace(replace_text, myschool.date);
+  var schoollocation = HTMLschoolLocation.replace(replace_text, myschool.location);
+  var schoolmajor = HTMLschoolMajor.replace(replace_text, myschool.major);
+  $("#education").append(schoolStart);
+  $(".education-entry:last").append(schoolname + schooldegree);
+  $(".education-entry:last").append(schooldate);
+  $(".education-entry:last").append(schoollocation);
+  $(".education-entry:last").append(schoolmajor);
+});
 
-var schoolStart = HTMLschoolStart
-var schoolname = HTMLschoolName.replace(replace_text, myschool.name);
-var schooldegree = HTMLschoolDegree.replace(replace_text, myschool.degree);
-var schooldate = HTMLschoolDates.replace(replace_text, myschool.date);
-var schoollocation = HTMLschoolLocation.replace(replace_text, myschool.location);
-var schoolmajor = HTMLschoolMajor.replace(replace_text, myschool.major);
-$("#education").append(schoolStart);
-$(".education-entry").append(schoolname + schooldegree);
-$(".education-entry").append(schooldate);
-$(".education-entry").append(schoollocation);
-$(".education-entry").append(schoolmajor);
 
 $("#main").append(internationalizeButton);
 $("#main").append(googleMap);
