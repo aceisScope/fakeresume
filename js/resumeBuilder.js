@@ -43,6 +43,9 @@ var place = HTMLlocation.replace(replace_text, bio["contacts"]["location"]);
 $("#topContacts").append(email);
 $("#topContacts").append(github);
 $("#topContacts").append(place);
+$("#footerContacts").append(email);
+$("#footerContacts").append(github);
+
 
 var work = {
   jobs: [
